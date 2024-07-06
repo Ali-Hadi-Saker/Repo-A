@@ -1,15 +1,10 @@
 import yaml
 import os
 
-def readConfig():
+def main():
     path = os.path.join(os.path.dirname(__file__), '..', 'config.yaml')
     with open(path, 'r') as file:
         config = yaml.safe_load(file)
-    return config
-
-
-def main():
-    config = readConfig()
     if config.get('run_localhost'):
         print('ERROR !!!')
 
